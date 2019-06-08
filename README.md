@@ -16,22 +16,20 @@ Inconclusive. Besides for generating the beautiful image above, the model in it'
 
 ### Inspiration
 There are a variety of inspirations for this project:
-1. Backpropagation currently requires too much data to work well.
-2. The large number of inhibitory neurons running parallel to cortex are rather mysterious. The cortex modeled as an SOM is a possible explanation.
+1. SGD currently requires too much data to work well.
+2. The large number of inhibitory neurons running parallel to cortical surface are rather mysterious. An SOM is a possible explanation.
 3. The famous cortical orientation columns can be explained quite well with a convolution SOM.
 
 
 ### Why its a good idea
 1. It learns unsupervised with a small amount of data.
 2. It is very insensitive to noise. Because higher layers are connected to a 2D point in their input layer, and input is weighted by the distance between the connection point and the activated point. This works because nearby points on an SOM layer represent similar data.
-3. It is really simple, and simple is usually better. (Occam's razer, PEP20)
+3. It is really simple, and simple is usually better. (Occam's razer)
 
 
 ### What needs work 
-1. The big, big issue with this architecture is that it is essentially doing template matching. Template matching is not scalable. 
-2. A 2D space, as used in an SOM, is not descriptive enough for the wide variety of real world variances. Increasing the dimensionality would help.
-3. In addition to #2, some type of pose matrix (or pose dimensions) would be needed, this probably would need to be supervised or possibly unsupervised with an input from some sort of motor system.
-4. Another way to increase the descriptive space is to use branching.
+The big, big issue with this architecture is that it is essentially doing template matching. Template matching is not scalable.  The 2D linear space, as used in an SOM, is not descriptive enough. An additional 'modifier' space is needed. This is the language equivalent of adjectives, which greatly increase representational capacity.
+For example:  Given X nouns and Y adjectives we can describe X * Y objects, which is far greater than  X + Y objects. If we allow multiple adjectives to modify a single noun then the gains are even greater.
 
 
 ### How it works.
